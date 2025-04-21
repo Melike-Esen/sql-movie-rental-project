@@ -1,4 +1,3 @@
-# sql-movie-rental-project
 # 🎬 SQL Movie Rental Project
 
 Bu proje, temel SQL bilgilerini geliştirmek amacıyla hazırlanmış mini bir film kiralama veritabanı projesidir. Veritabanında müşteri, film ve kiralama işlemleriyle ilgili 3 temel tablo bulunmaktadır.
