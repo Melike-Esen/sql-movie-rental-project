@@ -34,4 +34,4 @@ Bu proje hem öğrenme sürecine katkı sağlamak hem de portfolyoda örnek bir 
 
 ---
 
-🧑‍💻 Hazırlayan: [Adını Buraya Yazabilirsin]
+🧑‍💻 Hazırlayan: [Melike Esen]
