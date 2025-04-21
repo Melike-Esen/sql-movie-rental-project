@@ -1,0 +1,26 @@
+-- MyCustomers tablosu
+CREATE TABLE MyCustomers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    signup_date DATE
+);
+
+-- MyMovies tablosu
+CREATE TABLE MyMovies (
+    movie_id INT PRIMARY KEY,
+    title VARCHAR(100),
+    genre VARCHAR(50),
+    release_year INT
+);
+
+-- MyRentals tablosu
+CREATE TABLE MyRentals (
+    rental_id INT PRIMARY KEY,
+    customer_id INT,
+    movie_id INT,
+    rental_date DATE,
+    return_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES MyCustomers(customer_id),
+    FOREIGN KEY (movie_id) REFERENCES MyMovies(movie_id)
+);

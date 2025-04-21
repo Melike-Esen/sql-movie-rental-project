@@ -1,0 +1,37 @@
+-- 1. Tüm kiralama geçmişi
+SELECT r.rental_id, c.name AS customer_name, m.title AS movie_title, r.rental_date, r.return_date
+FROM MyRentals r
+JOIN MyCustomers c ON r.customer_id = c.customer_id
+JOIN MyMovies m ON r.movie_id = m.movie_id;
+
+-- 2. Ayşe'nin kiraladığı filmler
+SELECT c.name, m.title
+FROM MyRentals r
+JOIN MyCustomers c ON r.customer_id = c.customer_id
+JOIN MyMovies m ON r.movie_id = m.movie_id
+WHERE c.name = 'Ayşe Yılmaz';
+
+-- 3. En çok kiralanan film
+SELECT m.title, COUNT(*) AS rental_count
+FROM MyRentals r
+JOIN MyMovies m ON r.movie_id = m.movie_id
+GROUP BY m.title
+ORDER BY rental_count DESC
+LIMIT 1;
+
+-- 4. Her müşterinin kiraladığı film sayısı
+SELECT c.name, COUNT(*) AS number_of_movies
+FROM MyRentals r
+JOIN MyCustomers c ON r.customer_id = c.customer_id
+GROUP BY c.name;
+
+-- 5. 2024'te kaç film kiralanmış
+SELECT COUNT(*) AS total_rentals_2024
+FROM MyRentals
+WHERE rental_date BETWEEN '2024-01-01' AND '2024-12-31';
+
+-- 6. En eski film
+SELECT title, release_year
+FROM MyMovies
+ORDER BY release_year ASC
+LIMIT 1;
